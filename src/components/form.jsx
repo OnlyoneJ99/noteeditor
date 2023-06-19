@@ -7,9 +7,6 @@ export default class ClassForm extends Component{
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);        
     }
-    componentDidUpdate(){
-        console.log(this.state.name)
-    }
     handleInputChange(e){
         const {dataset,value} = e.target;
         this.setState({[dataset.name]:value});
