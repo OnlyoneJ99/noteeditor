@@ -1,9 +1,10 @@
 import "./App.css";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./components/router/router_"
+import MovieReview from "./components/moviereview/moviereview";
 
 function App() {
-  return <RouterProvider router={router} />;
+    return(
+      <MovieReview />
+    )
 }
 
 export default App;
