@@ -1,7 +1,6 @@
 import "./App.css"
 import { TemperatureConverter } from "./components/tempconverter/tempconverter";
 function App() {
- 
 
   return (
     <>
