@@ -1,0 +1,28 @@
+.snackbar-ctn{
+    inset-block-start:1rem;
+    inset-inline-start: 50%;
+    transform: translate(-50%,calc(-100% - 1rem));
+    opacity: 0.3;
+    inline-size: 90%;
+    max-inline-size: 20rem;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(86, 88, 92, 0.238);
+    padding-block:.8rem;
+    border-radius:5px;
+    transition: 0.5s transform;
+    border-left: 8px solid rgba(255, 189, 57, 0.733);
+}
+.show-snackbar{
+    transform:translate(-50%,calc(100% ));
+    opacity: 1;
+}
+.snackbar{
+    inline-size: 85%;
+    margin-inline: auto;  
+}
+.snackbar__msg{
+    font-size:0.8rem;
+    text-align: center;
+    color:rgba(70, 79, 94, 0.725);
+    font-weight: bold;
+}
