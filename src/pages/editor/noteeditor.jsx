@@ -7,13 +7,13 @@ import { useLocation } from "react-router-dom";
 import Align from "../../components/align/align";
 import FontTools from "../../components/font/font";
 
-
 export default function NoteEditor(){
     const title = useRef("");   
     const note = useRef(""); 
     const titleInput = useRef();
     const textArea = useRef();
     const fontref = useRef();
+
     const [saving,setSaving] = useState(false);
     const [notes,setNotes] = useState(""); 
     const [notetitle,setNoteTitle] = useState("");
@@ -47,13 +47,23 @@ export default function NoteEditor(){
         return true;
     }
     async function saveNote(){
-
         const istitleavailable = checkTitleAvailability(title.current);
         if(title.current.length !== 0){
             if( note.current.length !== 0){
                 if(istitleavailable){ 
                     setSaving(true);
-                    localStorage.setItem(title.current,note.current);
+                    let date = new Date();
+                    const day = date.getDay();
+                    const month = date.getMonth();
+                    const year = date.getFullYear();
+                    const hour = date.getHours();
+                    const minute = date.getMinutes();
+                    const second = date.getSeconds();
+
+                    let datecreated = `
+                        ${(day < 10)?`0${day}`:day}/${(month < 10)?`0${month}`:month}/${year}  ${(hour < 10)?`0${hour}`:hour}:${(minute < 10)?`0${minute}`:minute}:${(second < 10)?`0${second}`:second}
+                    `;
+                    localStorage.setItem(title.current,JSON.stringify({note:note.current,datecreated}));
                     setDanger(false);
                     setSaving(false);
                     setMessage("Note saved");
@@ -92,6 +102,7 @@ export default function NoteEditor(){
     function alignText(aligntype){
         textArea.current.style.textAlign = aligntype;
     }
+    console.log("title",notetitle)
     return(
         <div className="note-editor flex flex-col">
             <header className="note-editor__header mi-auto">

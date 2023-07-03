@@ -4,7 +4,6 @@ import Toast from "../toast/toast";
 import Loader from "../loader/loader";
 import Header from "../header/header";
 import "./style/notes.css";
-import { useNavigate } from "react-router-dom";
 
 
 export default function Notes(){     
@@ -30,7 +29,10 @@ export default function Notes(){
             let length = titles.length;
             const notes = [];
             while(length--){
-                notes.push({id:length,title:titles[length],content:localStorage.getItem(titles[length])});
+                const noteinfo = JSON.parse(localStorage.getItem(titles[length]));
+                const note = noteinfo.note;
+                const datecreated = noteinfo.datecreated;
+                notes.push({id:length,title:titles[length],content:note,datecreated});
             }
             return notes;
         }
@@ -45,13 +47,11 @@ export default function Notes(){
         }
         else{
             if(notes.length !== 0){ 
-                let date = new Date();
-                let datecreated = `${date.getDay()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
                 return(
                     <div className="notes__wrapper">                       
                         {
                             notes.map((note)=>(
-                                <NoteCard title={note.title} content={note.content} key={note.id} datecreated={datecreated} deleteNote={deleteNote} />         
+                                <NoteCard title={note.title} content={note.content} key={note.id} datecreated={note.datecreated} deleteNote={deleteNote} />         
                             ))                        
                         }                
                     </div>
