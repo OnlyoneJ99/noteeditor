@@ -17,13 +17,13 @@
 .flex-col{
   flex-direction:column ;
 }
-.justify-center{
+.jus-center{
   justify-content: center;
 }
-.justify-sb{
+.jus-sb{
   justify-content: space-between;
 }
-.justify-se{
+.jus-se{
   justify-content: space-evenly;
 }
 .align-center{

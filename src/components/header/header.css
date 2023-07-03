@@ -1,0 +1,18 @@
+.notes__header{
+    margin-block-end: 20px;
+    flex-grow: 1;
+}
+.notes__title{
+    padding-block:13px;
+    color:rgb(118, 124, 129);
+}
+.notes__count{
+    font-size: 1.2rem;
+    color:rgb(97, 103, 108);
+    text-align: left;
+}
+.notes__header-divider{
+    inline-size: 100%;
+    padding-block: 0.5px;
+    background-color: rgba(186, 194, 201, 0.507);
+}

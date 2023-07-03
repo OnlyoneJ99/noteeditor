@@ -1,0 +1,39 @@
+.note-editor__styles-btn-ctn{
+    margin-inline-start:30px;
+}
+.note-editor__styles-btn{
+    border:0;
+    background-color: transparent;
+    cursor: pointer;
+    padding:5px;
+}
+.note-editor__font-size{
+    display: inline-block;
+    position: relative;
+    inline-size: 45px;
+    block-size: 23px;
+    border:1.5px solid rgb(125, 127, 130);
+    margin-inline: 60px;
+    overflow-x: hidden;
+}
+.note-editor__font-size select,.note-editor__font-size input{
+    position:absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+}
+.note-editor__font-size select{
+   margin:0;
+   font-size: 14px;
+   inline-size: 40px;
+   outline:none;
+   border:0;
+}
+.note-editor__font-size input{
+    padding:1px;
+    border:0;
+    font-size: 12px;
+    inline-size: 20px;
+    block-size: 100%;
+    outline:none;
+    color:rgb(125, 127, 130);
+}

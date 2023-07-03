@@ -1,0 +1,29 @@
+.notes__loader-ctn{
+    block-size: 100%;
+    inline-size: 100%;
+}
+.notes__loader{
+    block-size: 5rem;
+}
+.notes__loader-bar{
+    inline-size: 0.7rem;
+    block-size: 100%;
+    background-color: rgb(80, 80, 80);
+    animation: loading-anim 1.0s linear infinite;
+    border-radius:5px;
+}
+.notes__loader-bar:nth-child(2){
+    animation-delay: 0.25s;
+}
+.notes__loader-bar:nth-child(3){
+    animation-delay: 0.5s;
+}
+@keyframes loading-anim {
+    30%{
+        transform: scaleY(1.5);
+        background-color: rgb(255, 255, 255);
+    }
+    70%{
+        transform: scaleY(1);        
+    }
+}
